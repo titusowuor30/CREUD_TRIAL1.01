@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Student Name</td>
+            <td>Reg No</td>
+            <td>Total Books due</td>
+            <td>Email</td>
+            <td>Contact Number</td>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        {% for s in students %}
+            <tr>
+                <td><a class="article-title" href="">{{ s.name }}</a></td>
+                <td>{{ s.roll_no }}</td>
+                <td>{{ s.branch }}</td>
+                <td>{{ s.total_books_due }}</td>
+                <td>{{ s.email }}</td>
+                <td>{{ s.contact_no }}</td>
+                <td>
+                    <a href="" class="btn text-secondary px-0"><i class="far fa-edit fa-lg"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn text-secondary px-0" href=""><i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
